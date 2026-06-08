@@ -10,7 +10,7 @@ game/
   tl/None/common.rpym  # Russian translations
   gui/             # PNG assets (button/, bar/, slider/, scrollbar/, overlay/)
   gui/phone/       # Mobile variant assets
-  images/          # Not yet created — place images here for auto-definition
+  images/          # Character sprites by folder: alice/, helena/, sylvia/, mari/, shinna/
   saves/           # Ignored by git
   cache/           # Ignored by git
 ```
@@ -43,7 +43,6 @@ label start:
     return
 
 label chapter_1:
-    jump some_location
     call some_subroutine
     return
 ```
@@ -55,6 +54,63 @@ show eileen happy      # from game/images/eileen happy.webp
 show eileen happy at right  # with position
 hide eileen
 ```
+
+### Character sprites (in `game/images/` subdirectories)
+All sprites are in folders by character name. Ren'Py auto-defines them as `folder filename-without-ext`. Use spaces in filenames, lowercase.
+
+**Alice Togashi** (Алиса Тогаши) — `game/images/alice/`
+```
+show alice casual smile
+show alice casual smile blush
+show alice casual closed smile
+show alice casual closed smile blush
+show alice casual frown
+show alice casual frown blush
+show alice casual pout
+show alice casual shout
+```
+Variants: `closed`, `blush` — combine with any expression via spaces.
+
+**Helena Kurosawa** (Хелена Куросава) — `game/images/helena/`
+```
+show helena casual smile
+show helena casual opensmile
+show helena casual frown
+show helena casual smile blush
+show helena casual frown closedeyes
+show helena casual opensmile closedeyes blush
+```
+Expressions: `smile`, `opensmile`, `frown`, with `closedeyes` and/or `blush`.
+
+**Sylvia Kiba** (Сильвия Киба) — `game/images/sylvia/`
+```
+show sylvia casual smile
+show sylvia casual open
+show sylvia casual frown blush
+show sylvia casual closed smile
+show sylvia casual closed open blush
+```
+Expressions: `smile`, `frown`, `open`, with `closed` and/or `blush`.
+
+**Mari Ayase** (Мари Аясэ) — `game/images/mari/`
+```
+show mari casual smile
+show mari casual opensmile
+show mari casual frown
+show mari casual smile blush
+show mari casual frown eyesclosed
+show mari casual opensmile eyesclosed blush
+```
+Expressions: `smile`, `opensmile`, `frown`, with `eyesclosed`/`closedeyes` and/or `blush`.
+
+**Shinna Kudo** (Шинна Кудо) — `game/images/shinna/`
+```
+show shinna winter seifuku smile
+show shinna winter seifuku frown blush
+show shinna winter seifuku closed open
+```
+Outfit: `winter_seifuku`
+Expressions: `smile`, `frown`, `open`, with `closed` and/or `blush`.
 
 ### Screens (snake_case)
 ```python
@@ -141,18 +197,13 @@ init python:
 init offset = -2  # controls init priority
 ```
 
-### init offset
-- `init offset = -2` — in gui.rpy (runs first)
-- `init offset = -1` — in screens.rpy
-- No offset — script.rpy and options.rpy (normal priority)
-
 ### Menu choices
 ```python
 menu:
     "Option 1":
-        jump label_1
+        call label_1
     "Option 2":
-        jump label_2
+        call label_2
     "Leave":
         return
 ```
@@ -201,13 +252,6 @@ define b = Character('Name', kind=bubble)
 ```
 Already configured in gui.rpy / screens.rpy
 
-### Translation format (common.rpym)
-```python
-translate None strings:
-    old "English text"
-    new "Russian text"
-```
-
 ### Mobile variants
 ```python
 screen quick_menu():
@@ -239,7 +283,6 @@ action Preference("text speed", 50)
 action FileSave(slot)
 action FileLoad(slot)
 action FileAction(slot)
-action Jump("label")
 action Call("label")
 action SetVariable("var", value)
 action SetScreenVariable("var", value)
