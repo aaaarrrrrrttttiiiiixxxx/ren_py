@@ -3,9 +3,6 @@
 # Определение персонажей игры.
 define e = Character('Эйлин', color="#c8ffc8")
 
-image shinna_smile_blush:
-    "images/shinna/shinna_smile_blush.png"
-    zoom 0.5
 
 # Вместо использования оператора image можете просто
 # складывать все ваши файлы изображений в папку images.
