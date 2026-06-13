@@ -197,3 +197,11 @@ image shinna smile:
 
 image bg school_board_office = "images/school _board_office.jpeg"
 image bg street = "images/street.jpg"
+
+image bg gym = "images/gym.jpg"
+image bg locker_room = "images/locker_room.jpg"
+image bg corridor = "images/corridor.jpg"
+image bg assembly_hall = "images/assembly_hall.jpg"
+image bg theater_room = "images/theater_room.jpg"
+image bg storage_room = "images/storage_room.jpg"
+

@@ -252,15 +252,6 @@ define b = Character('Name', kind=bubble)
 ```
 Already configured in gui.rpy / screens.rpy
 
-### Mobile variants
-```python
-screen quick_menu():
-    variant "touch"  # replaces the desktop version
-
-style window:
-    variant "small"  # phone
-    background "gui/phone/textbox.png"
-```
 
 ### Key bindings
 ```python
@@ -293,6 +284,7 @@ action Play("music", "track.ogg")
 ## Conventions for this project
 - Labels: `snake_case` in Russian or English (use consistent choice)
 - Characters: lowercase single-letter or short variable names
+- Characters: all characters describes in game/characters.rpy
 - Screens: `snake_case`, use `style_prefix`, extend existing patterns
 - GUI: do NOT change gui.rpy or screens.rpy unless needed for new features
 - Images: place in `game/images/` with spaces in names for Ren'Py auto-detection

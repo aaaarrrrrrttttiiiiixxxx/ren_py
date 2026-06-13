@@ -1,21 +1,6 @@
 # Пролог 1: Кабинет Школьного совета
 # Основан на файле "Диалоги/Пролог 1 Кабинет Школьного совета.md"
 
-define s = Character('Шинна Кудо', color="#ff6b9d")
-define a = Character('Алиса Тогаши', color="#6bc5ff")
-define m = Character('Мари Аясэ', color="#ffb86b")
-define l = Character('Леон Грей', color="#b8b8ff")
-define n = Character(None, color="#ffffff")
-define seller = Character('Продавец', color="#aaaaaa")
-
-default leon_strength = 0
-default leon_intellect = 0
-default leon_mystic = 0
-default leon_organization = 0
-default leon_empathy = 0
-
-
-
 label prologue_1_scene_1:
     scene bg school_board_office
     with dissolve
@@ -214,7 +199,6 @@ label prologue_1_scene_3:
     n "..."
     n "Дважды проворачивает ключ"
 
-    jump prologue_2_scene_1
 
 label prologue_1_article_choice:
     menu:

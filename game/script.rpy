@@ -12,13 +12,8 @@ define e = Character('Эйлин', color="#c8ffc8")
 # Игра начинается здесь:
 label start:
     call prologue_1_scene_1
-
-    scene bg room
-
-    show eileen happy
-
-    e "Вы создали новую игру Ren'Py."
-
-    e "Добавьте сюжет, изображения и музыку и отправьте её в мир!"
+    call prologue_2_scene_1
+    call prologue_3_scene_1
+    call prologue_4_scene_1
 
     return
