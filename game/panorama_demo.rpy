@@ -5,14 +5,14 @@ define pan360_w = int(1024 * pan360_zoom)
 
 
 image bg wide_panorama:
-    "images/i.jpeg"
+    "images/1.jpg"
     zoom 4
 
 
 image bg wide_panorama_360 = Composite(
     (pan360_w * 2, 1080),
-    (0, 0), Transform("images/i.jpeg", zoom=pan360_zoom),
-    (pan360_w, 0), Transform("images/i.jpeg", zoom=pan360_zoom),
+    (0, 0), Transform("images/1.jpg", zoom=pan360_zoom),
+    (pan360_w, 0), Transform("images/1.jpg", zoom=pan360_zoom),
 )
 
 

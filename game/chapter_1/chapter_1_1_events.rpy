@@ -68,7 +68,7 @@ label ch1_1_run_to_corridor:
         $ c_say("Они в большой опасности.")
         $ c_say("Ведь у них нет зажигалки, как у нас!")
     else:
-        show mari smile
+        show mari smile at right
         m "Леон!"
         m "Теперь я думаю, нам нужно помочь остальным."
         m "Они в большой опасности."

@@ -109,7 +109,7 @@ label pro_3_corridor_meeting:
     s "Неудобно просить"
     s "Но если честно, очень выручишь"
 
-    show mari smile at sprite_left
+    show mari smile at sprite_far_left
     m "Ура, Сильви-тян с нами!"
     m "Будет весело!"
 
@@ -117,7 +117,7 @@ label pro_3_corridor_meeting:
     l "Правда мы взяли ужин только на четверых"
     l "Но я могу поделиться своим"
 
-    show alice angry at sprite_left
+    show alice angry at sprite_far_right
     a "Х..."
 
     show sylvia smile

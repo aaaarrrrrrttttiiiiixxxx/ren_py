@@ -337,7 +337,7 @@ label exp2_reading_room:
     return
 
 label exp2_lab_assistant:
-    scene bg laboratory
+    scene bg chemistry_laboratory
     with dissolve
 
     n "Леон дергает за сломанную ручку и открывает дверь..."

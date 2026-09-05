@@ -220,6 +220,37 @@ transform sprite_center:
     yanchor 1.0
     ypos 1.0
 
+transform sprite_rat:
+    xalign 0.5
+    xoffset 260
+    yanchor 1.0
+    ypos 1.0
+    yoffset -220
+
+transform sprite_far_left:
+    xanchor 0.5
+    xpos 0.12
+    yanchor 1.0
+    ypos 1.0
+
+transform sprite_far_right:
+    xanchor 0.5
+    xpos 0.88
+    yanchor 1.0
+    ypos 1.0
+
+transform far_left:
+    xanchor 0.5
+    xpos 0.12
+    yanchor 1.0
+    ypos 1.0
+
+transform far_right:
+    xanchor 0.5
+    xpos 0.88
+    yanchor 1.0
+    ypos 1.0
+
 init python:
     EMO_TO_KEY = {
         'нейтрально': 'neutral', 'нейтральная': 'neutral',

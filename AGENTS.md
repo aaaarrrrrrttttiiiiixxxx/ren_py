@@ -295,11 +295,24 @@ action Play("music", "track.ogg")
 
 ## Testing
 - Tests live in `game/testcases.rpy` (Ren'Py built-in `testsuite`/`testcase`).
+  The headless chapter runner is in `game/test_harness.rpy`.
 - **When you change game logic, UI, or add chapters, you MUST add/update a test
   and run the suite until it passes.**
+- Suites: `smoke` (UI drive), `integrity` (static checks), `playthrough` (one
+  headless run per `prologue_*` / `chapter_*_*` label — verifies no crash and
+  **no two girl sprites on the same on-screen slot at once**). When you add a
+  `prologue_*` or `chapter_X_Y` label, add a matching `playthrough::*` testcase.
+- **Overlap rule**: never `show` two different girl tags (`alice`/`mari`/`shinna`/
+  `helena`/`sylvia`) at the same position at once. Five slots exist:
+  `far_left`/`left`/`center`/`right`/`far_right` (transforms in
+  `game/sprite_registry.rpy`); `show X` with no `at` lands at **center**. For
+  group scenes (4–5 girls) use `far_left`/`far_right`; `hide` before swapping.
+  The playthrough tests will fail on any overlap.
+- `assert eval` takes a **bare** expression, not a quoted string — quoting makes
+  it vacuous. Precompute compound logic into a `$ _ok = ...` then `assert eval _ok`.
 - Run (from repo root):
   ```
-  /home/vadim/Загрузки/renpy-8.5.3-sdkarm/renpy.sh . test
+  renpy . test
   ```
   Tests need a real display (`DISPLAY=:0`); exit code 0 = pass.
-- Full guide (DSL, gotchas, test list): see [docs/testing.md](docs/testing.md).
+- Full guide (DSL, harness API, gotchas, test list): see [docs/testing.md](docs/testing.md).

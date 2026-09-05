@@ -23,7 +23,7 @@ define STAT_ICONS = {
 }
 
 default char_stats = {
-    'leon':     {'strength': 0, 'intellect': 0, 'organization': 0, 'mysticism': 0, 'empathy': 0},
+    'leon':     {'strength': 1, 'intellect': 1, 'organization': 1, 'mysticism': 1, 'empathy': 1},
     'alice':    {'strength': 0, 'intellect': 3, 'organization': 2, 'mysticism': 1, 'empathy': 1},
     'mari':     {'strength': 1, 'intellect': 2, 'organization': 1, 'mysticism': 2, 'empathy': 3},
     'shinna':   {'strength': 2, 'intellect': 3, 'organization': 3, 'mysticism': 1, 'empathy': 2},
@@ -171,12 +171,24 @@ init python:
     def action_done(action_id):
         return action_id in done_actions
 
+    ARTICLE_ALIASES = {
+        'ch2_sport': 'sport',
+        'ch2_chess': 'chess',
+        'ch2_valet': 'joker',
+        'ch2_notes': 'notes',
+        'ch2_music': 'music',
+    }
+
+    def _article_canonical(article_id):
+        return ARTICLE_ALIASES.get(article_id, article_id)
+
     def mark_article_read(article_id):
+        article_id = _article_canonical(article_id)
         if article_id not in read_articles:
             read_articles.append(article_id)
 
     def is_article_read(article_id):
-        return article_id in read_articles
+        return article_id in read_articles or _article_canonical(article_id) in read_articles
 
     def mark_document_read(doc_id):
         if doc_id not in read_documents:

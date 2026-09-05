@@ -21,6 +21,9 @@ label ch1_4_scene1_gen_room:
         "Атаковать":
             call ch1_4_attack
 
+    show skeleton warrior at sprite_center
+    with dissolve
+
     n "Дорогу в архив преграждает скелет со щитом и мечом"
 
     skeleton "Вхааааа!"
@@ -34,6 +37,8 @@ label ch1_4_scene1_gen_room:
         "Увернуться":
             call ch1_4_fight_skeleton_dodge
 
+    hide skeleton warrior
+
     call ch1_4_werewolf_from_window
 
     return
@@ -42,11 +47,16 @@ label ch1_4_scene1_gen_room:
 label ch1_4_run:
     n "На Леона нападает изуродованный мертвец"
 
+    show zombie guard at sprite_center
+    with dissolve
+
     zombie "Агрх..."
     zombie "Агр..."
 
     n "Леон, дает деру, пробегая вокруг стеллажа..."
     n "Зомби едва не касается его..."
+
+    hide zombie guard
 
     l "Нужно скорее найти Девушку"
     l "И убираться от сюда"
@@ -56,11 +66,16 @@ label ch1_4_run:
 
 label ch1_4_attack:
     n "Леон снимает рюкзак с плеч"
-    n "И размахивает им пред упырем..."
+    n "И размахивается им пред упырем..."
+
+    show zombie guard at sprite_center
+    with dissolve
 
     zombie "Ввв-ва?"
 
     n "Мертвец замирает от удивления, а затем рассеивается в туман..."
+
+    hide zombie guard
 
     l "Что? Что это было?"
     l "Он исчез?"
@@ -114,7 +129,7 @@ label ch1_4_werewolf_from_window:
             n "Он спотыкается о разбросанные коробки и падает на спину"
             l "Мммм..."
             l "Блин, похоже ногу подвернул"
-            $ leon_take_wound()
+            $ stat_add('leon', 'strength', -1)
 
     return
 

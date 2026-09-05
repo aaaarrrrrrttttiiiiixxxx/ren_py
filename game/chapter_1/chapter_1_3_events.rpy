@@ -264,6 +264,9 @@ label ch1_3_generator_room:
 
     n "Девушке кладет на плечо руку охранник..."
 
+    show zombie guard at sprite_center
+    with dissolve
+
     guard "Хргх..."
 
     n "Девушка вздрагивает..."
@@ -289,6 +292,8 @@ label ch1_3_generator_room:
     l "Прямо бог из машины..."
     l "[companion_display]!"
     l "Где же ты..."
+
+    hide zombie guard
 
     n "Леон возвращается к генератору..."
 

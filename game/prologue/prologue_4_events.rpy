@@ -307,10 +307,10 @@ label pro_4_storage_room:
 
     n "В подсобке тускло мигающая лампочка освещает реквизит и декорации к балу"
 
-    show shinna smile at right
+    show shinna smile at sprite_right
     s "Посмотрите этот плащ просто замечательный"
 
-    show mari smile at left
+    show mari smile at sprite_left
     m "Шинна-тян, тебе очень идет!"
 
     show helena opensmile
@@ -326,7 +326,7 @@ label pro_4_storage_room:
 
     n "У Алисы от страха затряслись колени"
 
-    show alice closed frown blush at left
+    show alice closed frown blush at sprite_far_left
     a "[[Может сбежать?]"
     a "[[Нет, нет, нет. Лучше держаться вместе с остальными...]"
 
@@ -347,10 +347,10 @@ label pro_4_storage_room:
     n "Леон решает прочесть несколько предложений"
     n "И удивительным образом он в точности произносит заклинание"
 
-    show shinna smile at right
+    show shinna smile at sprite_right
     s "Ну, кажется ничего..."
 
-    show sylvia frown at left
+    show sylvia frown at sprite_far_right
     sy "Да, но звучало довольно пугающе"
 
     show alice closed frown blush

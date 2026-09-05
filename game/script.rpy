@@ -12,16 +12,16 @@ define e = Character('Эйлин', color="#c8ffc8")
 # Игра начинается здесь:
 label start:
     show screen group_panel
-    call demo_panorama
+    # call demo_panorama
 
-    call prologue_1
-    call prologue_2
-    call prologue_3
-    call prologue_4
+    # call prologue_1
+    # call prologue_2
+    # call prologue_3
+    # call prologue_4
 
-    call chapter_1_1
-    call chapter_1_2
-    call chapter_1_3
+    # call chapter_1_1
+    # call chapter_1_2
+    # call chapter_1_3
     call chapter_1_4
 
     call chapter_2_1

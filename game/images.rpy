@@ -72,59 +72,69 @@ image sylvia smile:
     "images/sylvia/sylvia_smile.png"
     zoom 0.225
 
-image bg school_board_office = "images/bg/school_board_office.jpeg"
-image bg wardrobe = "images/bg/locker_room.jpg"
-image bg school_board_office_2 = "images/bg/school_board_office_2.webp"
-image bg street = "images/bg/street.jpg"
-
-image bg gym = "images/bg/gym.jpg"
-image bg gym_2 = "images/bg/gym_2.jpeg"
-image bg locker_room = "images/bg/locker_room.jpg"
-image bg corridor = "images/bg/corridor.jpg"
-image bg corridor_2 = "images/bg/corridor_2.jpeg"
-image bg assembly_hall = "images/bg/assembly_hall.jpg"
-image bg assembly_hall_2 = "images/bg/assembly_hall_2.jpg"
-image bg theater_room = "images/bg/theater_room.jpg"
-image bg theater_room_2 = "images/bg/theater_room_2.jpg"
-image bg theater_room_3 = "images/bg/theater_room_3.jpeg"
-image bg storage_room = "images/bg/storage_room.jpg"
-image bg storage_room_2 = "images/bg/storage_room_2.jpg"
-
-image bg archive = "images/bg/archive.jpg"
-image bg archive_2 = "images/bg/archive_2.webp"
-image bg biology = "images/bg/biology.jpg"
-image bg generator_room = "images/bg/generator_room.jpg"
-image bg guard_post = "images/bg/guard_post.jpeg"
-image bg laboratory = "images/bg/laboratory.jpg"
-image bg men_toilet = "images/bg/men_toilet.webp"
-image bg robotics = "images/bg/robotics.jpg"
-image bg women_toilet = "images/bg/women_toilet.webp"
-
 image bg drafting = "images/bg/drafting.jpg"
-image bg janitor = "images/bg/janitor.jpg"
 image bg literature = "images/bg/literature.jpg"
 image bg literature_2 = "images/bg/literature_2.jpg"
-image bg medbay = "images/bg/medbay.webp"
-image bg medbay_2 = "images/bg/medbay_2.webp"
 image bg music = "images/bg/music.jpg"
 image bg music_2 = "images/bg/music_2.webp"
 image bg workshop = "images/bg/workshop.jpg"
 image bg workshop_2 = "images/bg/workshop_2.jpg"
 
-image bg math = Solid("#3a3a4a")
-image bg teachers_lounge = Solid("#4a3a2a")
-image bg cafeteria = Solid("#2a4a3a")
-
-image bg reception = Solid("#5a4a3a")
-image bg psychologist = Solid("#4a4a5a")
-image bg physics = Solid("#3a4a5a")
-image bg chemistry = Solid("#3a5a4a")
-image bg library = Solid("#4a3a5a")
-image bg reading_room = Solid("#5a5a3a")
-image bg geography = Solid("#3a5a5a")
-image bg journalism = Solid("#5a3a4a")
-image bg informatics = Solid("#4a5a5a")
-image bg rest_room = Solid("#5a4a5a")
-image bg social_studies = Solid("#5a5a4a")
-image bg history = Solid("#4a4a4a")
+init 10 python:
+    def _register_location_bgs():
+        base = "images/bg/locations/"
+        locations = {
+            "school_board_office": "student_council_room.png",
+            "school_board_office_2": "student_council_room.png",
+            "street": "school_street.png",
+            "gym": "gymnasium.png",
+            "gym_2": "gymnasium.png",
+            "locker_room": "girls_locker_room.png",
+            "wardrobe": "coatroom.png",
+            "corridor": "corridor.png",
+            "corridor_2": "corridor.png",
+            "assembly_hall": "auditorium.png",
+            "assembly_hall_2": "auditorium.png",
+            "theater_room": "theater_club.png",
+            "theater_room_2": "theater_club.png",
+            "theater_room_3": "theater_club.png",
+            "storage_room": "backstage_storage.png",
+            "storage_room_2": "backstage_storage.png",
+            "biology": "biology_classroom.png",
+            "laboratory": "biology_prep_lab.png",
+            "chemistry_laboratory": "chemistry_prep_lab.png",
+            "women_toilet": "girls_restroom.png",
+            "men_toilet": "boys_restroom.png",
+            "guard_post": "security_post.png",
+            "archive": "archive.png",
+            "archive_2": "archive.png",
+            "generator_room": "generator_room.png",
+            "medbay": "infirmary.png",
+            "medbay_2": "infirmary.png",
+            "robotics": "robotics_club.png",
+            "math": "mathematics_classroom.png",
+            "teachers_lounge": "staff_room.png",
+            "cafeteria": "cafeteria.png",
+            "reception": "reception_office.png",
+            "psychologist": "psychologist_room.png",
+            "physics": "physics_classroom.png",
+            "chemistry": "chemistry_classroom.png",
+            "library": "library.png",
+            "reading_room": "reading_room.png",
+            "geography": "geography_classroom.png",
+            "journalism": "journalism_club.png",
+            "informatics": "computer_classroom.png",
+            "rest_room": "lounge.png",
+            "social_studies": "social_studies_classroom.png",
+            "history": "history_classroom.png",
+            "janitor": "janitor_closet.png",
+            "principal_office": "principal_office.png",
+        }
+        for tag, filename in locations.items():
+            path = base + filename
+            width, height = renpy.image_size(path)
+            zoom = max(config.screen_width * 1.0 / width, config.screen_height * 1.0 / height)
+            renpy.image("bg " + tag, Transform(path, zoom=zoom))
+    _register_location_bgs()
+    del _register_location_bgs
 

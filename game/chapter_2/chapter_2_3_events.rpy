@@ -80,7 +80,7 @@ label ch2_3_storage_closet:
 
     n "Леон открывает дверь в кладовке..."
 
-    show rat sprite at sprite_center
+    show rat sprite at sprite_rat
     rat "Ффффф"
 
     $ c_show("frown")
